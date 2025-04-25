@@ -4,7 +4,7 @@ const fs = require('fs')
 
 describe('fake names tests', () => {
   test('should generate a first name', () => {
-    const spy = jest.spyOn(fakeNames, 'firstName').mockImplementation(() => 'Janes')
+    const spy = jest.spyOn(fakeNames, 'firstName').mockImplementation(() => 'Jane')
     fakeNames.firstName()
     expect(spy).toHaveBeenCalled()
     expect(spy()).toBe('Jane')
