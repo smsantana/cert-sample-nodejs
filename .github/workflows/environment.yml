@@ -1,0 +1,22 @@
+name: environment
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      node-version:
+        description: 'Node.js version'
+        required: true
+        default: '18.x'
+
+jobs:
+    print:
+        runs-on: ubuntu-latest
+        steps:
+        - run: |
+                echo "Node.js version: ${{ github.event.inputs.node-version }}"
+
+    prod-check:
+      runs-on: ubuntu-latest
+      steps:
+      - run: echo "Deploying to production server on branch $GITHUB_REF"

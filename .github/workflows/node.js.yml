@@ -3,9 +3,9 @@ run-name: "CI - Event: ${{ github.event_name }}"
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "mantainer" ]
+  # pull_request:
+  #   branches: [ "main" ]
 
 jobs:
   test:
