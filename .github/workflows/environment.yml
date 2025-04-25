@@ -18,5 +18,8 @@ jobs:
 
     prod-check:
       runs-on: ubuntu-latest
+      if: github.ref == 'refs/heads/main'
       steps:
       - run: echo "Deploying to production server on branch $GITHUB_REF"
+      - name: echo all environment variables
+        run: env
